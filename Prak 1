@@ -1,0 +1,68 @@
+package com.mycompany.contoh;
+import java.util.Scanner;
+
+public class Contoh {
+    Scanner in = new Scanner(System.in);
+    
+    private String Nama;
+    private String Nim;
+    private String Paswword;
+
+    
+    public String getNama() {
+        return Nama;
+    }
+
+    public void setNama(String Nama) {
+        this.Nama = Nama;
+    }
+
+    public String getNim() {
+        return Nim;
+    }
+
+    public void setNim(String Nim) {
+        if (getNim().length() !=15){
+        System.out.println("Nim Harus Berjumplah 15 Angka");
+    }else {
+          this.Nim = Nim;
+        }
+    }
+
+    public String getPaswword() {
+        return Paswword;
+    }
+
+    public void setPaswword(String Paswword) {
+        if (getPaswword().length() !=8){
+        System.out.println("Paswword Harus Berjumplah 8 Angka");
+    }else {
+            this.Paswword = Paswword;
+        }
+    }
+    public void info() {
+        System.out.println("---- Identitas Diri ----");
+        System.out.print("Nama Mahasiswa  : ");
+        Nama = in.nextLine();
+            do{
+                System.out.print("Nim\t\t: ");
+                Nim = in.nextLine();
+                setNim(Nim);
+            }while (getNim().length() !=15);
+            do{
+                System.out.print("Paswword\t: ");
+                Paswword = in.nextLine();
+                setPaswword(Paswword);
+            }while (getPaswword().length() !=8);
+        System.out.println("---------------------------");
+        System.out.println("  Selamat Datang Atas Nama "+getNama());
+        System.out.println("  Berikut Nim dan Pasword anda ");
+        System.out.println("  Nim         : "+getNim());
+        System.out.println("  Paswword    : "+getPaswword());
+        System.out.println("---------------------------");
+    }
+    public static void main(String[] args) {
+        Contoh c = new Contoh();
+        c.info();
+    }
+}
