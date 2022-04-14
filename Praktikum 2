@@ -1,0 +1,118 @@
+////////////////////////// Mencari Rata Rata Nilai Mahasiswa ///////////////////////////
+
+package com.mycompany.praktikum1;
+import java.util.Scanner;
+public class RataRata {
+    
+    Scanner in = new Scanner(System.in);
+      
+      private int NilaiProgdas;
+      private int NilaiKalkulus;
+      private int NilaiOrkom;
+      double ratarata;
+      
+    public int getNilaiProgdas() {
+        return NilaiProgdas;
+    }
+
+    public void setNilaiProgdas(int NilaiProgdas) {
+        this.NilaiProgdas = NilaiProgdas;
+    }
+
+    public int getNilaiKalkulus() {
+        return NilaiKalkulus;
+    }
+
+    public void setNilaiKalkulus(int NilaiKalkulus) {
+        this.NilaiKalkulus = NilaiKalkulus;
+    }
+
+    public int getNilaiOrkom() {
+        return NilaiOrkom;
+    }
+
+    public void setNilaiOrkom(int NilaiOrkom) {
+        this.NilaiOrkom = NilaiOrkom;
+    }
+    
+    
+    public void data() {
+        System.out.print("Nilai Progdas : ");
+        NilaiProgdas = in.nextInt();
+        System.out.print("Nilai Orkom : ");
+        NilaiOrkom = in.nextInt();
+        System.out.print("Nilai Kalkulus : ");
+        NilaiKalkulus = in.nextInt();
+        
+        ratarata = (NilaiProgdas + NilaiOrkom + NilaiKalkulus)/3;
+        System.out.println("--- Nilai Anda ---");
+        System.out.println(" Nilai Prodas : "+getNilaiProgdas());
+        System.out.println(" Nilai Orkom : "+getNilaiOrkom());
+        System.out.println(" Nilai Kalkulus : "+getNilaiKalkulus());
+        System.out.println("Nialai Rata Rata : "+ratarata);
+        
+        
+        
+
+        if(ratarata > 75){
+            System.out.println("SELAMAT ANDA Lulus");
+        }else {
+            System.out.println("MAAF ANDA Tidak Lulus");
+        }}
+
+
+
+    
+    public static void main(String args[]){
+        RataRata c = new RataRata();
+        c.data();
+        
+      
+      
+        
+     
+   }
+}
+
+
+
+
+
+////////////// Rata RAta belah ketupat tersetruktur///////////////////////////////
+
+package com.mycompany.praktikum1;
+import java.util.Scanner;
+
+public class BelahKetupat {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int menu;
+        double s, d1, d2, keliling, luas;
+
+        System.out.println("========= KELILING & LUAS BELAH KETUPAT =========\n\n");
+        System.out.println("1. Keliling Belah Ketupat\n2. Luas Belah Ketupat\n\n");
+        System.out.print("Inputkan Nomor Menu        = ");
+        menu = sc.nextInt();
+        System.out.println("");
+
+    switch(menu){
+        case 1:
+            System.out.print("Inputkan Sisi Belah Ketupat    = ");
+            s = sc.nextDouble();
+            keliling = 4 * s;
+            System.out.println("\nKeliling Belah Ketupat         = " +keliling);
+            break;
+        case 2:
+            System.out.print("Inputkan Diagonal Pertama Belah Ketupat    = ");
+            d1 = sc.nextDouble();
+            System.out.print("Inputkan Diagonal Kedua Belah Ketupat      = ");
+            d2 = sc.nextDouble();
+            luas = 0.5 * d1 * d2;
+            System.out.println("\nLuas Belah Ketupat                         = " +luas);
+            break;
+        default:
+            System.out.println("Input Salah");
+        } 
+    }
+}
